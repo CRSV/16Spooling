@@ -1,0 +1,3 @@
+for filename in *.fastq; 
+do     awk -v filename="$filename" 'BEGIN { cntr = 0 } /@/ { cntr++ ; print "@X" substr(filename,Y,Z) cntr } !/@/ { print $0 }' <$filename >$filename.2; 
+done #Replace all the lines beginning with @ by @ followed by a substring of the name of the file and an incremental number. This is applied to all the .fastq files in a folder. New files with the extension fastq.2 are created.
