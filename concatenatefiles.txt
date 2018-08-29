@@ -1,1 +1,1 @@
-gawk '{a[$1]=a[$1] OFS $2}END{ for(i in a)system("cat " a[i] "> POOL" i ".fastq")}’ PoolslistX.txt #Concatenate the fastq files listed in the PoolslistX.txt file created previously in R
+gawk '{a[$1]=a[$1] OFS $2}END{ for(i in a)system("cat " a[i] "> POOL" i ".fastq")}' PoolslistX.txt #Concatenate the fastq files listed in the PoolslistX.txt file created previously in R
